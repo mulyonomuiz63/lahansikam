@@ -4,7 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {BottomNavigator} from '../components/besar';
-import {Home, Setting} from '../pages';
+import {Home, Setting, Splash} from '../pages';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -19,11 +19,7 @@ const MainApp = () => {
     <Tab.Navigator
       tabBar={props => <BottomNavigator {...props} />}
       initialRouteName="Home">
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        options={{headerShown: false}}
-      />
+      <Tab.Screen name="Home" component={Home} options={{headerShown: false}} />
       <Tab.Screen
         name="Setting"
         component={Setting}
@@ -67,13 +63,17 @@ const HeaderNavigation = title => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="MainApp">
+    <Stack.Navigator initialRouteName="Splash">
       <Stack.Screen
         name="MainApp"
         component={MainApp}
         options={{headerShown: false}}
       />
-      
+      <Stack.Screen
+        name="Splash"
+        component={Splash}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };

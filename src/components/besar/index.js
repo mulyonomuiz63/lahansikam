@@ -1,3 +1,4 @@
 import BottomNavigator from './BottomNavigator';
+import Footer from './Footer';
 
-export {BottomNavigator};
+export {BottomNavigator, Footer};
